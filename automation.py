@@ -3,7 +3,7 @@ def listen_organize():
     import shutil
 
     # The path of the directory to be sorted
-    path = "C:/Users/Santa/Downloads"
+    path = "C:/Users/Lucas/Downloads"
     # This populates a list with the filenames in the directory
     list_ = os.listdir(path)
 
@@ -24,12 +24,15 @@ def listen_organize():
             os.makedirs(path+'/'+ext)
             shutil.move(path+'/'+file_, path+'/'+ext+'/'+file_)
     
-def main()
-import time
+def main():
+    import time
 
-while True:
-    try:
-        listen_organize()
-    except:
-        time.sleep(30)
-        listen_organize()
+    while True:
+        try:
+            listen_organize()
+        except Exception as e:
+            # print(e)
+            time.sleep(30)
+            listen_organize()
+
+main()
